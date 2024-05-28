@@ -1,0 +1,58 @@
+
+<!-- bootstrap link -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- font-awesome link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+<!-- css link -->
+<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+
+<div>  
+  <div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-3 sidenav">     
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Uploa only .CSV files</label>
+            <input type="file" name="file" accept=".csv" class="form-control" id="formFileMultiple" multiple />
+          </div>         
+          <button type="submit" class="btn btn-primary mt-0">Submit</button>
+        </form>
+      </div>
+
+      
+      
+      <div class="col-sm-9 text-left"> 
+        <h2>Uploaded Files</h2>
+        <% if (files.length ==0) { %>
+          <h2 id="idd" class="text-muted">No Files to show!</h2>
+        <% } else{ %>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Name</th>
+                <th scope="col">View</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <% for(let file of files) { %>
+                <tr>
+                  <td><%= file.createdAt.toLocaleDateString() %></td>
+                  <td><%= file.createdAt.toLocaleTimeString() %> </td>
+                  <td> <a href="/view/<%= file._id %>"><%= file.fileName %></a></td>
+                  <td> <a href="/view/<%= file._id %>" class="view-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> </td>
+                  <td><a href="/delete/<%= file._id %>" type="" class="delete-link"><i class="fa-regular fa-trash-can " style="color: #f00;"></i></a></td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
