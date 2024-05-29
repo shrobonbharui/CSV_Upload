@@ -35,7 +35,9 @@ const csv = require('csv-parser');
 // EXPORTING FUNCTION To open file viewer page
 async function fileView(req, res) {
     try {
-        const isFile =  await File.findOne({file: req.params._id});
+        // console.log(req.params.id);
+        const isFile =  await File.findById( req.params.id);
+        // console.log(isFile)
         const filesPath = isFile.filePath;
         const results = [];
         const header =[];
@@ -69,12 +71,13 @@ async function fileView(req, res) {
 // delete files
 async function deleteFile (req, res){
     try{
-        console.log(req.params);
-        const isFile =  await File.findOne({file: req.params._id});
+        // console.log(req.params);
+        const isFile =  await File.findById(req.params.id);
+        // console.log(isFile);
         const filesPath = isFile.filePath;
         // console.log(filesPath);
         if(isFile){
-            await File.deleteOne(isFile);  
+            await File.findByIdAndDelete(req.params.id);  
             fs.unlink(filesPath, (err) => {
                 if (err) {
                   console.error('Error deleting file:', err);

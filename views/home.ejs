@@ -40,13 +40,13 @@
             </thead>
             <tbody>
 
-              <% for(let file of files) { %>
+              <% for(let fil of files) { %>
                 <tr>
-                  <td><%= file.createdAt.toLocaleDateString() %></td>
-                  <td><%= file.createdAt.toLocaleTimeString() %> </td>
-                  <td> <a href="/view/<%= file._id %>"><%= file.fileName %></a></td>
-                  <td> <a href="/view/<%= file._id %>" class="view-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> </td>
-                  <td><a href="/delete/<%= file._id %>" type="" class="delete-link"><i class="fa-regular fa-trash-can " style="color: #f00;"></i></a></td>
+                  <td><%= fil.createdAt.toLocaleDateString() %></td>
+                  <td><%= fil.createdAt.toLocaleTimeString() %> </td>
+                  <td> <%= fil.fileName %></td>
+                  <td> <a href="/view/<%= fil._id %>"  class="view-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a> </td>
+                  <td><a href="/delete/<%= fil._id %>" class="delete-link"><i class="fa-regular fa-trash-can " style="color: #f00;"></i></a></td>
                 </tr>
               <% } %>
             </tbody>
