@@ -12,9 +12,11 @@ function searchTable() {
     // Get the text content of each row and convert it to lowercase
     const rowText = rows[i].textContent.toLowerCase();
     
+    
     // If the input value is found in the row text, highlight the row
     if (rowText.includes(input)) {
       rows[i].classList.add("highlight");
+      console.log(rowText);
     } else {
       rows[i].classList.remove("highlight");
     }

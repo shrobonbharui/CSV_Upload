@@ -108,3 +108,6 @@ table td {
     padding-left: 20px;
 
 }
+.highlight {
+    background-color: rgba(70, 130, 180, 0.2);
+  }
