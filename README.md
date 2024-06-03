@@ -3,14 +3,14 @@ CSV_Upload is a user-friendly web application designed for uploading and parsing
 
 - Git Repository link: 
 - Video link: https:
-- Hosted URL: https:
+- Hosted URL: https: https://csv-upload-ncf2.onrender.com
 
 ## Installation
 To install CSV_Upload, please follow these steps:
 
 Clone this repository using the following command:
 ```
-$ git clone (https://github.com/utkarshsingh341/CSVUpload.git)
+$ git clone ()
 ```
 Install the required dependencies using the following command:
 ```
