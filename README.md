@@ -22,7 +22,7 @@ $ nodemon server.js
 ```
 Open the application in your web browser by visiting the following URL:
 ```
-$ http://localhost:8000 
+$ http://localhost:4010 
 ```
 
 ## Features
